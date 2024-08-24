@@ -4,8 +4,8 @@ void main() {
   runApp(
     const MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Text("Welcome Adnroid world.."),
+        backgroundColor: Color.fromARGB(255, 30, 235, 12),
+        body: Center(child: Text("Welcome Adnroid world.."),
         ),
       ),
     ),
