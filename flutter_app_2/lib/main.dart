@@ -4,11 +4,13 @@ import 'package:flutter_app_2/gradient_container.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: Scaffold(
         body: GradientContainer(),
       ),
     ),
   );
 }
+
+
 
