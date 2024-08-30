@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_2/styled_text.dart';
 
 
 var startAlignment =  Alignment.topLeft;
@@ -8,8 +7,16 @@ var endAlignment = Alignment.bottomRight;
 class GradientContainer extends StatelessWidget {
 const GradientContainer(this.color_1, this.color_2, {super.key});
 
+const GradientContainer.purple({super.key}) :
+       color_1 = Colors.deepPurple, 
+       color_2 = Colors.blueGrey ;
+
 final Color color_1;
 final Color color_2;
+
+void rollDice(){
+
+} 
 
   @override
   Widget build(context)
@@ -28,9 +35,31 @@ final Color color_2;
         ),
       ),
       child: Center(
-        child: styledText("Priyanka.."),
-      ),
-    );
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+          Image.asset(
+          'assets/images/dice-3.png',
+           width: 200,
+          ),
+            const SizedBox(height: 20),
+            TextButton(
+              onPressed: rollDice,
+              style: TextButton.styleFrom(
+                // padding: const EdgeInsets.only(
+                //   top: 20,
+                // ),
+                foregroundColor: Colors.white,
+                textStyle: const TextStyle(
+                  fontSize: 28,
+                ),
+              ), 
+              child: const Text('Roll Dice'),             
+            )
+         ],
+       ), 
+     ),
+   );
   }
 }
 
