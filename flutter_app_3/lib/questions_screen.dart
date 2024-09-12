@@ -13,6 +13,10 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
 
   @override
   Widget build(context){
-    return const Text('QuestionsScreen');
+    return Column(children: [
+      const Text('the'),
+      const SizedBox(height: 30,),
+      ElevatedButton(onPressed: () {}, child: Text('Answer 1'))
+    ],);
   }
 }
