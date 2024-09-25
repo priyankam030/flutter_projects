@@ -1,9 +1,31 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app_3/data/quizzes.dart';
 
 class ResultsScreen extends StatelessWidget {
-  const ResultsScreen({super.key});
+  const ResultsScreen({
+    super.key,
+    required this.chosenAnswers,
+  });
 
+  final List<String> chosenAnswers;
 
+  List<Map<String, Object>> getSummaryData() {
+    final List<Map<String, Object>> Summary = [];
+
+    for (var i = 0; i < chosenAnswers.length; i++) {
+      Summary.add(
+        {
+          'question_index': i,
+          'question': questions [i].text,
+          'correct_Answer': questions[i].answers[0],
+          'user_answer' : chosenAnswers[i]
+        },
+      );
+    }
+
+    return Summary;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +45,7 @@ class ResultsScreen extends StatelessWidget {
               height: 30,
             ),
             TextButton(
-              onPressed: () {}, 
+              onPressed: () {},
               child: const Text('Restart Quiz!'),
             ),
           ],
